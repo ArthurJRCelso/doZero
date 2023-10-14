@@ -1,0 +1,26 @@
+div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 200px 150px;
+    height: 100vh;
+}
+
+main {
+    border: 1px solid black;
+    grid-column: 1/4;
+}
+
+span {
+    border: 1px solid red;
+}
+
+article {
+    border: 1px solid blue;
+    grid-column: 2/4;
+}
+
+footer {
+    border: 1px solid green;
+    grid-column: 1/4;
+}
+
