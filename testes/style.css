@@ -3,11 +3,17 @@ div {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 200px 150px;
     height: 100vh;
+    gap: 5px;
+    grid-template-areas:
+     "A A B"
+     "C C D"
+     "C C D";
 }
 
 main {
     border: 1px solid black;
-    grid-column: 1/4;
+   /* grid-column: 1/4;*/
+   grid-area: A;
 }
 
 span {
@@ -16,11 +22,13 @@ span {
 
 article {
     border: 1px solid blue;
-    grid-column: 2/4;
+   /* grid-column: 2/4;*/
+   grid-area: C;
 }
 
 footer {
     border: 1px solid green;
-    grid-column: 1/4;
+    /*grid-column: 1/4;*/
+    grid-area: D;
 }
 
