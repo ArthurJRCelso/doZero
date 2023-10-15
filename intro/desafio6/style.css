@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: #1E1E1E;
+}
+
+.container {
+    width: 125rem;
+    margin: auto;
+}
+
+header {
+    margin: 7.2rem 2.3rem 3.5rem;
+}
+
+header h1 {
+    color: #02799D;
+    font-size: 3.5rem;
+}
+
+header p {
+    color: #E1E1E6;
+    font-size: 2.3rem;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 36.5rem);
+    gap: 6rem;
+    
+
+    color: #E1E1E6;
+}
+
+#galaxy1, #galaxy2, #galaxy3, #galaxy4, #galaxy5, #galaxy6 {
+    background-color: #323238;
+    background-position: top;
+    background-repeat: no-repeat;
+
+    border: 1px solid #323238;
+    border-radius: .5rem;
+
+    height: 45rem;
+    margin: 2.3rem;
+
+    display: grid;
+}
+
+#galaxy1 {
+    background-image: url(assets/image\ 1.jpg);
+}
+
+#galaxy2 {
+    background-image: url(assets/image\ 2.jpg);
+}
+
+#galaxy3 {
+    background-image: url(assets/image\ 3.jpg);
+}
+
+#galaxy4 {
+    background-image: url(assets/image\ 3\ \(1\).jpg);
+}
+
+#galaxy5 {
+    background-image: url(assets/image\ 4.jpg);
+}
+
+#galaxy6 {
+    background-image: url(assets/image\ 5.jpg);
+}
+
+nav {
+    margin-block: 55%;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin: 2.3rem 0 1.2rem 2.3rem;
+}
+
+main p {
+    font-size: 1.5rem;
+    margin: 0 2.2rem 3.8rem;
+}

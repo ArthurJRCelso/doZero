@@ -1,4 +1,10 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
 div {
+    margin: 4px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 200px 150px;
@@ -14,6 +20,7 @@ main {
     border: 1px solid black;
    /* grid-column: 1/4;*/
    grid-area: A;
+   
 }
 
 span {
