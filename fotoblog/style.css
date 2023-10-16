@@ -9,11 +9,12 @@
 :root {
     font-size: 62.5%;
 
-    --color-base-white: #ffffff;
-    --color-base-gray-100: #F5F5F5;
-    --color-base-gray-300: #8D8D99;
-    --color-base-gray-500: #3D3D3D;
-    --color-base-gray-900: #202024;
+    --hue: 240
+    --color-base-white: hsl(0, 0%, 100%);
+    --color-base-gray-100: hsl(0, 0%, 96%);
+    --color-base-gray-300: hsl(var(--hue), 6%, 58%);
+    --color-base-gray-500: hsl(0, 0%, 24%);
+    --color-base-gray-900: hsl(var(--hue), 6%, 13%);
 }
 
 html, body, input {
@@ -135,6 +136,8 @@ main h1 {
 
     transition: all 200ms ease-out;
 
+    display: block;
+
 }
 
 .item img:hover {
@@ -172,4 +175,38 @@ footer p {
     font-weight: 600;
     text-align: center;
     padding: 1.6rem;
+}
+
+header {
+    --startY: -100%;
+    animation-name: move;
+    animation-duration: .2s;
+}
+
+footer {
+    --startY: 100%;
+    animation-name: move;
+    animation-duration: .2s;
+}
+
+@keyframes move {
+    from {
+        transform: translateY(var(--startY));
+    }
+}
+
+.item {
+    --delay: .4s;
+    animation: appear .4s var(--delay) backwards;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
 }

@@ -8,11 +8,19 @@ body {
     background-color: white;
     opacity: .6;
 
-    animation-name: move;
-    animation-duration: 2s;
+    animation-name: move, blink;
+    animation-duration: 2s, 200ms;
     animation-fill-mode: forwards;
     animation-direction: alternate;
     animation-iteration-count: infinite;
+    animation-delay: 2s;
+    animation-timing-function: steps(5);
+
+    /*animation: move 2s forwards alternate infinite, blink 100ms infinite, blink 100ms infinite*/
+}
+
+.square:hover {
+    animation-play-state: paused;
 }
 
 @keyframes move {
@@ -22,5 +30,15 @@ body {
 
     50% {
         transform: translateX(calc(100vw - 100% - 16px));
+    }
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .1;
     }
 }
