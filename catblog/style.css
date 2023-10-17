@@ -6,8 +6,140 @@
 
 :root {
     font-size: 62.5%;
+
+    --color-header: #065E7C;
+    --color-input: #2a87a5;
+
+    font-family: 'Mulish', sans-serif;
 }
 
 body {
     font-size: 1.6rem;
+}
+
+#app {
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 1.6rem 2.8rem;
+
+    background-color: var(--color-header);
+}
+
+header form {
+    flex: 1;
+}
+
+header img {
+    width: 4.2rem;
+    height: 4.2rem;
+    border-radius: 50%;
+}
+
+.input-wrapper label {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    overflow: hidden;
+}
+
+.input-wrapper input {
+    border: none;
+    width: 100%;
+    height: 4.5rem;
+    padding: 1.6rem;
+    border-radius: .5rem;
+
+    background-color: var(--color-input);
+
+}
+
+.input-wrapper input::placeholder {
+    color: white;
+    font-family: 'Mulish';
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+.container {
+    padding: 2.2rem 1.5rem;
+    width: 43.4rem;
+    margin: auto;
+}
+
+.cat {
+    width: 43.4rem;
+    margin: auto;
+}
+
+main h1 {
+    font-size: 2.4rem;
+    font-family: 'Mulish';
+    font-weight: 700;
+}
+
+main button {
+    border: none;
+    padding: .8rem 0 .8rem;
+}
+
+main button + button {
+    margin-left: 1.2rem;
+}
+
+main .button {
+    margin-bottom: 1.5rem;
+}
+
+article {
+    margin-top: 3.4rem;
+}
+
+article h1 {
+    font-weight: 700;
+    margin-bottom: 3.2rem;
+}
+
+article .link {
+    display: grid;
+    grid-template-areas:
+    "A B"
+    "A C";
+    column-gap: 1.6rem;
+}
+
+.nav {
+    display: flex;
+    gap: 3.2rem;
+    flex-direction: column;
+}
+
+.link img {
+    grid-area: A;
+}
+
+.link h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.link p {
+    font-size: 1.4rem;
+}
+
+footer {
+    height: 6.4rem;
+    background-color: #387E96;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 'Mulish';
+    font-weight: 500;
 }
