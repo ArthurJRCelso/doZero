@@ -72,8 +72,8 @@ header img {
 }
 
 .main {
-    margin: auto;
-    padding: 3.8rem 0;
+    margin: 0;
+    padding-bottom: 2rem;
 }
 
 .cat {
@@ -105,7 +105,10 @@ main button {
     border: none;
     padding: .8rem 0 .8rem;
     background-color: white;
-    
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 main button + button {
@@ -137,6 +140,13 @@ article .link {
 
 .link {
     width: 38.3rem;
+}
+
+.link:hover {
+    cursor: pointer;
+    filter: hue-rotate(7deg) contrast(101%) saturate(200%);
+    transform: scale(1.1) rotate(-2deg);
+    transition-duration: .4s;
 }
 
 .link img {
@@ -203,6 +213,7 @@ footer {
 
     .main {
         margin: 0;
+        padding-top: 2rem;
     }
 
     .cat {
