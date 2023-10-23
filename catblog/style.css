@@ -67,14 +67,17 @@ header img {
     font-size: 1.6rem;
 }
 
-.container {
-    padding: 2.2rem 1.5rem;
-    width: 43.4rem;
+.main {
     margin: auto;
 }
 
 .cat {
-    max-width: 48.3rem;
+    width: min(80.6rem, 100%);
+    margin: 0 auto 3rem;
+}
+
+main, article {
+    width: 43.4rem;
     margin: auto;
 }
 
@@ -84,9 +87,16 @@ main h1 {
     font-weight: 700;
 }
 
+main p {
+    font-size: 1.6rem;
+    font-family: "Mulish";
+}
+
 main button {
     border: none;
     padding: .8rem 0 .8rem;
+    background-color: white;
+    
 }
 
 main button + button {
@@ -94,16 +104,12 @@ main button + button {
 }
 
 main .button {
-    margin-bottom: 1.5rem;
-}
-
-article {
-    margin-top: 3.4rem;
+    margin-bottom: 1rem;
 }
 
 article h1 {
     font-weight: 700;
-    margin-bottom: 3.2rem;
+    margin: 3.4rem 0 3.2rem;
 }
 
 article .link {
@@ -120,6 +126,10 @@ article .link {
     flex-direction: column;
 }
 
+.link {
+    width: 38.3rem;
+}
+
 .link img {
     grid-area: A;
 }
@@ -131,6 +141,7 @@ article .link {
 
 .link p {
     font-size: 1.4rem;
+    color: #121214;
 }
 
 footer {
@@ -146,31 +157,39 @@ footer {
 }
 
 @media (min-width: 1120px) {
-    #app {
+    .main {
         display: grid;
-        grid-template-rows: max-content 1fr max-content;
-        height: 100vh;
         grid-template-areas: 
-        "A A"
-        "B D"
-        "C D";
-    }
+        "A A B"
+        "C C B";
 
-    header {
-        grid-area: A;
+        column-gap: 3.2rem;
+
+        margin: 4.4rem 11rem;
     }
 
     .cat {
-        grid-area: B;
-        width: 80.3rem;
-        height: 40.5rem;
+        grid-area: A;
     }
 
-    main {
+    .container {
         grid-area: C;
     }
 
-    article {
-        grid-area: D;
+    main {
+        width: 80rem;
     }
+
+
+
+    article {
+        grid-area: B;
+        margin: 0;
+    }
+
+    article h1 {
+        margin-top: 0;
+    }
+
+
 }

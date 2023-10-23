@@ -18,8 +18,8 @@ div {
 
 main {
     border: 1px solid black;
-   /* grid-column: 1/4;*/
-   grid-area: A;
+   grid-column: 1/4;
+   /*grid-area: A;*/
    
 }
 
@@ -29,13 +29,13 @@ span {
 
 article {
     border: 1px solid blue;
-   /* grid-column: 2/4;*/
-   grid-area: C;
+    grid-column: 2/4;
+   /*grid-area: C;*/
 }
 
 footer {
     border: 1px solid green;
-    /*grid-column: 1/4;*/
-    grid-area: D;
+    grid-column: 1/4;
+    /*grid-area: D;*/
 }
 
