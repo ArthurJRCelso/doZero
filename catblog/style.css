@@ -30,6 +30,10 @@ header {
     padding: 1.6rem 2.8rem;
 
     background-color: var(--color-header);
+
+    --startY: -100%;
+    animation-name: efect2;
+    animation-duration: .2s;
 }
 
 header form {
@@ -69,6 +73,7 @@ header img {
 
 .main {
     margin: auto;
+    padding: 3.8rem 0;
 }
 
 .cat {
@@ -79,6 +84,10 @@ header img {
 main, article {
     width: 43.4rem;
     margin: auto;
+}
+
+.main {
+    overflow-y: scroll;
 }
 
 main h1 {
@@ -153,7 +162,31 @@ footer {
     color: white;
     font-size: 'Mulish';
     font-weight: 500;
-    margin-top: 3.9rem;
+
+    --startY: 100%;
+    animation-name: efect2;
+    animation-duration: .2s;
+}
+
+.link {
+    animation: efect 1s;
+}
+
+@keyframes efect {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes efect2 {
+    from {
+        transform: translateY(var(--startY));
+    }
 }
 
 @media (min-width: 1350px) {
@@ -166,6 +199,10 @@ footer {
         column-gap: 3.2rem;
 
         margin: 4.4rem 11rem;
+    }
+
+    .main {
+        margin: 0;
     }
 
     .cat {
@@ -188,6 +225,4 @@ footer {
     article h1 {
         margin-top: 0;
     }
-
-
 }
