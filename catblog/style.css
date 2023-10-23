@@ -156,7 +156,7 @@ footer {
     margin-top: 3.9rem;
 }
 
-@media (min-width: 1120px) {
+@media (min-width: 1350px) {
     .main {
         display: grid;
         grid-template-areas: 
