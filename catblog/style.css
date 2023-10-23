@@ -74,7 +74,7 @@ header img {
 }
 
 .cat {
-    width: 43.4rem;
+    max-width: 48.3rem;
     margin: auto;
 }
 
@@ -142,4 +142,35 @@ footer {
     color: white;
     font-size: 'Mulish';
     font-weight: 500;
+    margin-top: 3.9rem;
+}
+
+@media (min-width: 1120px) {
+    #app {
+        display: grid;
+        grid-template-rows: max-content 1fr max-content;
+        height: 100vh;
+        grid-template-areas: 
+        "A A"
+        "B D"
+        "C D";
+    }
+
+    header {
+        grid-area: A;
+    }
+
+    .cat {
+        grid-area: B;
+        width: 80.3rem;
+        height: 40.5rem;
+    }
+
+    main {
+        grid-area: C;
+    }
+
+    article {
+        grid-area: D;
+    }
 }
