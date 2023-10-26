@@ -6,7 +6,7 @@ let noteThree = Number(prompt("Digite a terceira nota:"))
 let average = (noteOne + noteTwo + noteThree) / 3
 
 if (average >= 15) {
-    alert('Parabéns ' + name + '! Você foi aprovado')
+    alert('Parabéns ' + name + '! Sua média foi de ' + average.toFixed(2) + '! Você foi aprovado!')
 } else if (average >= 11) {
     alert('Estude para a prova de recuperação!')
 } else {
