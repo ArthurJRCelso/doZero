@@ -1,4 +1,4 @@
-patients = [
+let patients = [
     {
         name: 'Arthur',
         age: 28,
