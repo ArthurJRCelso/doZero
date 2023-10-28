@@ -1,3 +1,11 @@
+let text = Number(prompt('Digite algo:'))
+
+if(typeof text === 'number') {
+    alert('É um número!')
+} else {
+    alert('Não é um número!')
+}
+
 let numberOne = Number(prompt('Digite um número'))
 let numberTwo = Number(prompt('Digite outro número:'))
 
@@ -8,4 +16,3 @@ if(soma != 0) {
 } else {
     alert('A soma dos dois números é par.')
 }
-
