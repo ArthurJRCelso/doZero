@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --font: 'Mulish', sans-serif;
+    --color-title: #B52184;
+    --color-p: #312D64;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: var(--font);
+}
+
+.container {
+    width: 43rem;
+    margin: auto;
+}
+
+header {
+    text-align: center;
+    background-color: #F9F4FB;
+}
+
+header .astro {
+    width: 36.4rem;
+    height: 37rem;
+
+    animation-name: astro;
+    animation-duration: .5s;
+}
+
+header .text {
+    animation-name: title;
+    animation-duration: .5s;
+}
+
+header h1 {
+    margin: 1.7rem auto .1rem;
+    font-size: 3.2rem;
+    color: #B52184;
+    font-weight: 1000;
+}
+
+header p {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #312D64;
+}
+
+header .secondImg {
+    margin: 3.5rem auto 9.3rem;
+}
+
+header .secondImg:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: .5s;
+}
+
+main {
+    background-color: #312D64;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    padding: 3.9rem;
+}
+
+main .wrapper {
+    background-color: white;
+    padding: 2.7rem;
+    border-radius: 1.9rem;
+}
+
+main .wrapper:hover {
+    transform: scale(1.1);
+    transition-duration: .4s;
+    cursor: pointer
+}
+
+main .wrapper img {
+    margin-bottom: 3rem;
+}
+
+main .wrapper h2 {
+    color: var(--color-title);
+    font-size: 2.9rem;
+    font-weight: 1000;
+}
+
+main .wrapper p {
+    font-weight: 600;
+    margin-top: 1.5rem;
+    color: var(--color-p);
+}
+
+fieldset {
+    border: none;
+    margin: 7.8rem 3.9rem 6.5rem;
+}
+
+legend {
+    font-weight: 1000;
+    color: var(--color-title);
+    font-size: 3rem;
+    margin-bottom: 4.3rem;
+}
+
+.input-wrapper label{
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.input-wrapper input {
+    width: 100%;
+    height: 4.8rem;
+    border-radius: 1.6rem;
+    margin-bottom: 2.4rem;
+    border: 2px solid #312D64;
+    padding: 1.6rem 1.6rem 1.6rem 5rem;
+    font-weight: 600;
+    color: #312D64;
+    font-family: var(--font);
+    font-size: 1.6rem;
+}
+
+.input-wrapper .person {
+   background-image: url(assets/person.svg);
+   background-repeat: no-repeat;
+   background-position: left 1.4rem top 50%;
+}
+
+.input-wrapper .at {
+    background-image: url(assets/at.svg);
+    background-repeat: no-repeat;
+    background-position: left 1.4rem top 50%;
+}
+
+.input-wrapper textarea {
+    height: 12.6rem;
+    border-radius: 1.6rem;
+    border: 2px solid #312D64;
+    padding: 1.2rem 1.6rem;
+    font-weight: 600;
+    color: #312D64;
+    font-family: var(--font);
+    font-size: 1.6rem;
+}
+
+button {
+    margin-top: 2.4rem;
+    background-color: #312D64;
+    height: 4.5rem;
+    color: white;
+    border: none;
+    padding: 1.5rem 1.6rem;
+    border-radius: 1.6rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4740ab;
+}
+
+footer {
+    background-color: #312D64;
+    color: white;
+    height: 7.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes astro {
+    from {
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes title {
+    from {
+        transform: scale(1.5);
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 100%;
+    }
+    
+    header {
+        display: grid;
+        grid-template-areas:
+        'A A B'
+        'C C B';
+
+    }
+
+    header .astro {
+        width: 72rem;
+        height: 73.2rem;
+        grid-area: B;
+    }
+    header .text {
+        display: flex;
+        flex-direction: column;
+        margin-top: 26rem;
+        grid-area: A;
+    }
+
+    .text h1 {
+        font-size: 5.8rem;
+        margin-left: 10.9rem;
+    }
+
+    .text p {
+        font-size: 3.2rem;
+        align-self: self-start;
+        margin-left: 10.9rem;
+    }
+
+    header .secondImg {
+        grid-area: C;
+        margin-top: 17.9rem;
+        margin-left: 10.9rem;
+    }
+
+    main {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    main .wrapper {
+        width: 36.6rem;
+        height: 44.8rem;
+    }
+
+    .wrapper h1, p {
+        font-size: 2rem;
+    }
+
+    form {
+        background-image: url(assets/image\ 11976.svg);
+        background-repeat: no-repeat;
+        background-position: right 0 top 100%;
+
+        padding: 9.5rem 7.9rem;
+    }
+
+    form fieldset {
+        margin: 0;
+    }
+
+    .input-wrapper input, textarea {
+        width: 59.2rem;
+    }
+}
