@@ -91,6 +91,8 @@ main .phrase {
     width: 29.7rem;
     padding: .1rem;
     margin: 1.7rem 0;
+
+    animation: cookie2 2s;
 }
 
 main .phrase p {
@@ -115,4 +117,10 @@ button {
 
 button:hover {
     background-color: #e2880b;
+}
+
+@keyframes cookie2 {
+    0% {
+        transform: translateY(150px) scale(0.1);
+    }
 }
