@@ -21,8 +21,9 @@ function handleTryClick(event) {
         screen2.querySelector('h2').innerHTML = `Acertou em ${xAttempts} tentativas!`
     }
 
-    if(inputNumber.value == '' || inputNumber.value < 0) {
+    if(inputNumber.value == '' || inputNumber.value < 0 || inputNumber.value > 10) {
         alert('Valor inválido!')
+        inputNumber.value = ''
         return
     }
 
