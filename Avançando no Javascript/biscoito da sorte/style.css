@@ -22,15 +22,22 @@ body {
     place-content: center;
 }
 
+.hide {
+    display: none;
+}
+
 main {
     box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.80);
     background-color: white;
     border-radius: .5rem;
     text-align: center;
 
-    padding: 4.8rem 8.4rem 6.4rem;
     width: min(42.8rem, 90%);
     margin: auto;
+}
+
+.screen1 {
+    margin: 4.8rem 8.4rem 6.4rem;
 }
 
 main h1 {
@@ -47,4 +54,65 @@ main p {
     font-family: var(--font-p);
     font-size: 1.5rem;
     font-weight: 400;
+}
+
+.cookie {
+    cursor: pointer;
+}
+
+.cookie:hover {
+    animation: cookie .2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes cookie {
+    100% {
+        transform: rotate(3deg);
+    }
+}
+
+/* ------------ screen 2 -------------- */
+
+.screen2 {
+    margin: 4.8rem 6.4rem;
+}
+
+main h2 {
+    color: #34355B;
+    font-family: var(--font-title);
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+main .phrase {
+    background-color: #E4EDF1;
+    box-shadow: 2px 2px 2px 0px rgba(85, 85, 85, 0.50);
+
+    width: 29.7rem;
+    padding: .1rem;
+    margin: 1.7rem 0;
+}
+
+main .phrase p {
+    font-family: var(--font-phrase);
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: black;
+}
+
+button {
+    background-color: #FF9500;
+    color: white;
+    border: none;
+    font-family: var(--font-button);
+    font-weight: 700;
+    border-radius: .4rem;
+    cursor: pointer;
+
+    padding: 1.6rem;
+    width: 17.4rem;
+}
+
+button:hover {
+    background-color: #e2880b;
 }
