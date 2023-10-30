@@ -11,6 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="alert-error open">
+        Digite somente números
+    </div>
+
     <div class="container">
         <main class="card">
             <form action="">
@@ -20,7 +24,7 @@
                     <input id="weight" type="text" placeholder="60">
                 </div>
                 <div class="input-wrapper">
-                    <label for="height">Altura (m)</label>
+                    <label for="height">Altura (cm)</label>
                     <input id="height" type="text" placeholder="165">
                 </div>
                 <button type="submit">
@@ -29,6 +33,17 @@
                 </button>
             </form>
         </main>
+    </div>
+
+    <div class="modal-wrapper">
+        <div class="modal card">
+            <h2 class="title">
+                <button class="close">
+                    <img src="assets/close.svg" alt="">
+                </button>
+                <span>Seu IMC é de 28</span>
+            </h2>
+        </div>
     </div>
 </body>
 </html>
