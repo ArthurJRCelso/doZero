@@ -6,18 +6,90 @@
 
 :root {
     font-size: 62.5%;
+
+    --font: 'Roboto', sans-serif;
+    --color-light: #323238;
+    --color-hover: #02799D;
+    --bg-color: white;
+    --txt-color: white;
+}
+
+html.dark {
+    --bg-color: black;
+    --color-light: white;
 }
 
 body {
-    font-size: 1.6rem;
+    font-size: 12.8rem;
+    font-family: var(--font);
+    font-weight: 500;
+    padding: 2rem;
+    background-color: var(--bg-color);
+    color: var(--color-light);
 
     display: grid;
     height: 100vh;
     place-content: center;
 }
 
+body .darkLight {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+}
+
+html.dark .sun,
+html:not(.dark) .moon {
+    display: none;
+}
+
 main {
     display: flex;
     gap: 19.7rem;
+    align-items: center;
+    justify-content: center;
 }
+
+main .display {
+    display: flex;
+    flex-direction: column;
+}
+
+main .timer {
+    display: flex;
+    
+    color: var(--color-light);
+}
+
+main .buttons {
+    display: flex;
+    gap: 4rem;
+}
+
+main .sounds {
+    display: grid;
+    grid-template-areas:
+    "A B"
+    "A B";
+    gap: 3.2rem;
+}
+
+.sounds button {
+    
+}
+
+.sounds button:hover .bg-color {
+    fill: var(--color-hover);
+    transition: .2s;
+}
+
+.sounds button:hover .color {
+    fill: white;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+} 
 
