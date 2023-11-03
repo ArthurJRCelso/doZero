@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+
+    display: grid;
+    height: 100vh;
+    place-content: center;
+}
+
+main {
+    display: flex;
+    gap: 19.7rem;
+}
+
