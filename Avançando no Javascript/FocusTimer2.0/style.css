@@ -38,8 +38,19 @@ body .darkLight {
     right: 3rem;
 }
 
+body .musicOnOff {
+    position: absolute;
+    bottom: 3rem;
+    right: 3rem;
+}
+
 html.dark .sun,
 html:not(.dark) .moon {
+    display: none;
+}
+
+html.music-on .musicOff,
+html:not(.music-on) .musicOn {
     display: none;
 }
 
