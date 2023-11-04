@@ -20,6 +20,7 @@ buttonToggle.addEventListener('click', () => {
 function registerControls() {
     controls.addEventListener('click', (event) => {
        const action = event.target.dataset.action
+       if(typeof actions[action])
     })
 }
 
