@@ -1,4 +1,3 @@
-import { minutes } from "../../FocusTimer/src/FocusTimer/elements"
 
 const buttonToggle = document.querySelector('.darkLight')
 const buttonMusicOnOff = document.querySelector('.musicOnOff')
@@ -27,13 +26,41 @@ buttonMusicOnOff.addEventListener('click', () => {
     document.documentElement.classList.toggle('music-on')
 })
 
+buttonPlayPause.addEventListener('click', toggleRunning)
+buttonStop.addEventListener('click', stop)
+
 buttonAddTime.addEventListener('click', timeAdd)
+buttonRemoveTime.addEventListener('click', removeTimer)
 
 function start(minutes, seconds) {
     state.minutes = minutes
     state.seconds = seconds
 
     updateDisplay()
+}
+
+function countdown() {
+    if(!state.isRunning) {
+        return
+    }
+
+    let minutes = Number(timer.minutes.textContent)
+    let seconds = Number(timer.seconds.textContent)
+
+    seconds--
+
+    if(seconds < 0) {
+        seconds = 59
+        minutes--
+    }
+
+    if(minutes < 0) {
+        stop()
+        return
+    }
+
+    updateDisplay(minutes, seconds)
+    setTimeout(() => countdown(), 1000)
 }
 
 function updateDisplay(minutes, seconds) {
@@ -43,8 +70,6 @@ function updateDisplay(minutes, seconds) {
     timer.minutes.textContent = String(minutes).padStart(2, "0")
     timer.seconds.textContent = String(seconds).padStart(2, "0")
 }
-
-
 
 function toggleRunning() {
     state.isRunning = !state.isRunning
@@ -59,6 +84,13 @@ function stop() {
 function timeAdd() {
     let min = state.minutes + 5
     let time = min >= 60? 60 : min
+    state.minutes = time
+    stop()
+}
+
+function removeTimer() {
+    let min = state.minutes - 5
+    let time = min <= 0? 60 : min
     state.minutes = time
     stop()
 }
