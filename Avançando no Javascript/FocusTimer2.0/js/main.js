@@ -1,3 +1,4 @@
+import * as actions from './actions.js'
 
 const buttonToggle = document.querySelector('.darkLight')
 const buttonMusicOnOff = document.querySelector('.musicOnOff')
@@ -11,12 +12,19 @@ let timer = {
     seconds: document.querySelector('.second')
 }
 let clearTimeOutID = null
-let state = {
+export let state = {
     minutes: 25,
     seconds: 0,
     isRunning: false,
     noMusic: true, 
 }
+
+
+buttonPlayPause.addEventListener('click', toggleRunning)
+buttonStop.addEventListener('click', stop)
+buttonAddTime.addEventListener('click', timeAdd)
+buttonRemoveTime.addEventListener('click', timeRemove)
+
 
 buttonToggle.addEventListener('click', () => {
     document.documentElement.classList.toggle('dark')
@@ -26,17 +34,12 @@ buttonMusicOnOff.addEventListener('click', () => {
     document.documentElement.classList.toggle('music-on')
 })
 
-buttonPlayPause.addEventListener('click', toggleRunning)
-buttonStop.addEventListener('click', stop)
-
-buttonAddTime.addEventListener('click', timeAdd)
-buttonRemoveTime.addEventListener('click', removeTimer)
-
 function start(minutes, seconds) {
     state.minutes = minutes
     state.seconds = seconds
 
     updateDisplay()
+    registerControls()
 }
 
 function countdown() {
@@ -63,7 +66,7 @@ function countdown() {
     setTimeout(() => countdown(), 1000)
 }
 
-function updateDisplay(minutes, seconds) {
+export function updateDisplay(minutes, seconds) {
     minutes = minutes ?? state.minutes
     seconds = seconds ?? state.seconds
 
@@ -88,7 +91,7 @@ function timeAdd() {
     stop()
 }
 
-function removeTimer() {
+function timeRemove() {
     let min = state.minutes - 5
     let time = min <= 0? 60 : min
     state.minutes = time
