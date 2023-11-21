@@ -15,7 +15,6 @@ export class GithubUser {
     }
 }
 
-
 // classe que vai conter a lógica dos dados
 // como os dados serão estruturados
 export class Favorites {
