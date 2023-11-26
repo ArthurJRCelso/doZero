@@ -121,10 +121,23 @@ table td {
     text-align: left;
 }
 
+table tr > * {
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--color-table);
+    text-align: left;
+  
+    padding-block: 2.4rem;
+}
+
 td.user {
     display: flex;
     align-items: center;
     gap: 1rem;
+}
+
+.user {
+    display: flex;
 }
 
 td.user img {
