@@ -1,6 +1,40 @@
+import { GithubUser } from "./GithubUser.js"
+
 export class Favorites {
     constructor(root) {
         this.root = document.querySelector(root)
+        this.load()
+    }
+
+    load() {
+        this.entries = JSON.parse(localStorage.getItem('@github-favorites:')) || []
+    }
+
+    save() {
+        localStorage.setItem('@github-favorites:', JSON.stringify(this.entries))
+    }
+
+    async add(username) {
+        try {
+            const userExists = this.entries.find(entry => entry.login === username)
+
+            if(userExists) {
+                throw new Error('Usuário já cadastrado!')
+            }
+
+            const user = await GithubUser.search(username)
+
+            if(user.login === undefined) {
+                throw new Error('Usuário não encontrado!')
+            }
+
+            this.entries = [user, ...this.entries]
+            this.update()
+            this.save()
+
+        } catch(error) {
+            alert(error.message)
+        }
     }
 
     delete(user) {
@@ -9,7 +43,7 @@ export class Favorites {
 
         this.entries = filteredEntries
         this.update()
-        
+        this.save()
     }
 }
 
@@ -20,7 +54,20 @@ export class FavoritesView extends Favorites {
         this.tbody = this.root.querySelector('table tbody')
 
         this.update()
+        this.onadd()
 
+    }
+
+    onadd() {
+        const buttonFav = this.root.querySelector('.fav')
+        buttonFav.onclick = () => {
+            let { value } = this.root.querySelector('.search input')
+            let valor = this.root.querySelector('.search input')
+
+            this.add(value)
+
+            valor.value = ''
+        }
     }
 
     update() {
